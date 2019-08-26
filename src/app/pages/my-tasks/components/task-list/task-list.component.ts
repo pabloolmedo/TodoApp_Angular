@@ -1,4 +1,4 @@
-import { Task } from './../../interfaces/task';
+import { Task } from '../../../../shared/interfaces/task';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

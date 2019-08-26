@@ -1,0 +1,8 @@
+<div class="task-header">
+    <p class="task-title">{{ task.title }}</p>
+    <span class="task-description">{{ task.description }}</span>
+</div>
+<div class="task-footer">
+    <span class="task-date success">Inicia: {{ task.date | date:'shortDate' | date: 'dd/MM/yyyy' }}</span>
+    <span class="task-date danger">Vence: {{ task.deadLine | date:'shortDate' | date:'dd/MM/yyyy' }}</span>
+</div>

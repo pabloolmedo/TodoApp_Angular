@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="openAddModal(taskCreation)">Add</button>
+<button class="btn btn-outline-primary btn-lg btn-add" (click)="openAddModal(taskCreation)">Add Task</button>
 <ng-template #taskCreation>
     <div class="modal-header">
         <h4 class="modal-title pull-left">New Task</h4>
@@ -8,14 +8,14 @@
     </div>
     <div class="modal-body">
         <form [formGroup]="newTaskForm">
-            <label for="title">Titulo:</label>
+            <label for="title">Title:</label>
             <input id="title" type="text" formControlName="title" class="form-control">
-            <label for="description">Descripcion:</label>
+            <label for="description">Description:</label>
             <input id="description" type="text" formControlName="description" class="form-control">
-            <label for="deadLine">Realizar antes de:</label>
-            <input id="deadLine" type="text" formControlName="deadLine" placeholder="Datepicker" class="form-control"
+            <label for="deadLine">Do before:</label>
+            <input id="deadLine" type="text" formControlName="deadLine" placeholder="Pick a deadline date" class="form-control"
                 bsDatepicker [bsConfig]="{ adaptivePosition: true }">
-            <label for="date">Fecha:</label>
+            <label for="date">Date:</label>
             <input id="date" type="text" formControlName="date" class="form-control" bsDatepicker disabled>
         </form>
     </div>

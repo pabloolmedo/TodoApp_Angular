@@ -1,14 +1,18 @@
 :host {
-  .container-flex{
-    display: flex;
-    background: #000;
-    justify-content: center;
+  
+  .navbar-brand {
+    font-size: 25px;
   }
-  .title {
-    background: #32dbc6;
-    border: 2px solid #000;
-    text-align: center;
+  .nav-link{
+    font-weight: 400;
+    color:rgba(0, 0, 0, 0.9);
+    &.nav-link:hover{
+      color: #0083FF !important;
+    }
+   
+  }
+  .active-link{
+    color: #0083FF !important;
+  }
 
-    
-  }
 }
