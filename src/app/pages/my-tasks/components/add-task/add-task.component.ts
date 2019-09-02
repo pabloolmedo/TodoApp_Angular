@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../../../shared/service/local-storage.service';
 import { Component, OnInit, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';//VERRRRR!
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -14,7 +15,7 @@ export class AddTaskComponent implements OnInit {
   public newTaskForm: FormGroup;
   @Output() newTask = new EventEmitter<Task>();
 
-  constructor(private modalService: BsModalService) {
+  constructor(private modalService: BsModalService, private localStorageService: LocalStorageService) {
 
   }
 
@@ -35,10 +36,9 @@ export class AddTaskComponent implements OnInit {
     this.newTaskForm.get('date').setValue(new Date());
   }
   public confirmTask(): void {
-
-    this.newTask.emit(this.newTaskForm.value);
-
+    this.newTask.emit(this.newTaskForm.value);    
     this.modalRef.hide();
+    this.localStorageService.update('tasks', this.newTaskForm.value);
     this.newTaskForm.reset();
   }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {  Task } from '../../../../shared/interfaces/task';
+
 
 @Component({
   selector: 'app-task',
@@ -9,9 +10,13 @@ import {  Task } from '../../../../shared/interfaces/task';
 export class TaskComponent implements OnInit {
 
   @Input() task: Task; 
+  @Output() delete = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  deleteTask(): void {
+    this.delete.emit();
   }
 
 }

@@ -1,3 +1,6 @@
-<p>component-home works!</p>
-
-
+<app-weather (newWeather)="obteinWeather($event)"></app-weather>
+<div class="card" >
+    <h1>City: {{weather.list[0].name}}</h1>
+    <h3>Temp: {{weather.list[0].main.temp}}</h3>
+    <h4>Forecast: {{weather.list[0].weather[0].description}}</h4>
+</div>

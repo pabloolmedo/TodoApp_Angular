@@ -6,6 +6,7 @@
     padding: 10px;
     margin-bottom: 10px;
     background-color: #fff;
+    position: relative;
     &:hover{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
         // background-color: rgb(8, 138, 224);
@@ -39,6 +40,11 @@
                 color:#64e291;
             }
         }
+    }
+    .btn-delete {
+        position: absolute;
+        top: 8px;
+        right: 8px;
     }
 }
 // @media all and (max-width: 320px){

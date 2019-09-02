@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../shared/service/local-storage.service';
 import { Task } from './../../shared/interfaces/task';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyTasksComponent implements OnInit {
  public myTasks: Array<Task> = [];
-  constructor() { }
+  constructor(private localStorageService: LocalStorageService) { }
 
 
   ngOnInit() {
+     this.myTasks = this.localStorageService.retrieve('tasks');
   }
   onNewTask(task : Task) : void{
     this.myTasks.push(task);
+    this.localStorageService.update('tasks', this.myTasks);
    
 
   }
+
+  
 }

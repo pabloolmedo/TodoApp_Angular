@@ -1,3 +1,4 @@
+import { LocalStorageService } from './shared/service/local-storage.service';
 import { Component } from '@angular/core';
 
 
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AppTestIncluit';
+  constructor(private localStorageService: LocalStorageService){
+    if(!this.localStorageService.retrieve('tasks')){
+      this.localStorageService.create('tasks', []);
+    }
+  }
 
 
 }
