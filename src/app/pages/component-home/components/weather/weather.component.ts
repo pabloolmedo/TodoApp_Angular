@@ -11,15 +11,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class WeatherComponent implements OnInit {
   public currentWeather:object;
   @Output() newWeather = new EventEmitter<any>();
+  @Output() isLoadingEvent = new EventEmitter<any>();
 
   constructor(private weatherService: WeatherServiceService) { }
-
+  isLoading:boolean = false;
+ngOnChanges(){
+  
+}
   ngOnInit() {
+    this.getWeatherDaily("cordoba");
   }
 
    //Metodo Get que pega a la API 
    getWeatherDaily(param: string): void {
-     
+    this.isLoadingEvent.emit(!this.isLoading);
     let params: {};
     params = {
       q: param + ", ar",
@@ -33,11 +38,19 @@ export class WeatherComponent implements OnInit {
         
         
         this.currentWeather = res;
-        console.log(this.currentWeather);
+        // console.log(this.currentWeather);
+        this.isLoadingEvent.emit(this.isLoading);
         this.newWeather.emit(this.currentWeather);
+
+        
+      
       },
-     error => console.log(error)
+     error =>{
+      console.log(error);
+      this.isLoadingEvent.emit(this.isLoading);
+     } 
     )
+    
     
     
   }

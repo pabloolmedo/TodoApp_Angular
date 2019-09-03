@@ -1,6 +1,11 @@
-<app-weather (newWeather)="obteinWeather($event)"></app-weather>
-<div class="card" >
-    <h1>City: {{weather.list[0].name}}</h1>
-    <h3>Temp: {{weather.list[0].main.temp}}</h3>
-    <h4>Forecast: {{weather.list[0].weather[0].description}}</h4>
+<app-weather (newWeather)="obteinWeather($event)" (isLoadingEvent)="obteinLoading($event)"></app-weather>
+<span class="count" *ngIf="weathers?.count && !loading">{{weathers?.count}} Results!</span>
+<span class="count" *ngIf="!weathers?.count && !loading">No Results! Try Again</span>
+<span class="count" *ngIf="loading">Loading...!</span>
+<div class="card" *ngFor="let weatherItem of weathers?.list">
+    <h1>City: {{weatherItem.name}}</h1>
+    <h3>Temp: {{weatherItem.main.temp}}</h3>
+    <div *ngFor="let secondItem of weatherItem?.weather">
+        <h4>Forecast: {{secondItem.description}}</h4>
+    </div>
 </div>

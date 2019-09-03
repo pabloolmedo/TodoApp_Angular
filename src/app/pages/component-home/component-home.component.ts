@@ -10,22 +10,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-home.component.scss']
 })
 export class ComponentHomeComponent implements OnInit {
- 
- weather = {};
+
+  weathers = {};
+  loading: boolean;
+
 
 
   constructor() { }
 
   ngOnInit() {
 
-    
+
   }
-  obteinWeather(e){
-     console.log(e);
-     this.weather = e;
+  obteinLoading(e) {
+    this.loading = e;
+    console.log(this.loading);
+  }
+  obteinWeather(e) {
+
+    this.weathers = e;
+
+
   }
 
 
- 
+
+
 
 }
