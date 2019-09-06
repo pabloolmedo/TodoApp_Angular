@@ -24,7 +24,7 @@ export class ComponentHomeComponent implements OnInit {
   }
   obteinLoading(e) {
     this.loading = e;
-    console.log(this.loading);
+   
   }
   obteinWeather(e) {
 

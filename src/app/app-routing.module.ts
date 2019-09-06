@@ -1,3 +1,5 @@
+import { LoginComponent } from './pages/login/login.component';
+import { LoginGuard } from './guards/login.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -6,12 +8,18 @@ import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'home',
-    component: ComponentHomeComponent
+    component: ComponentHomeComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'mytask',
-    component: MyTasksComponent
+    component: MyTasksComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: '',
