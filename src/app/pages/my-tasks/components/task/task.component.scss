@@ -1,7 +1,7 @@
 :host {
     width: 80%;
     display: block;
-    border: solid 1px #099EFF;
+    border: solid 1px rgb(2, 2, 2);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
@@ -28,7 +28,7 @@
         justify-content: space-between;
         margin-top: 10px;
         padding-top: 10px;
-        border-top: solid 1px #099EFF   ;
+        border-top: solid 1px rgb(7, 7, 7)   ;
 
         .task-date {
             color: #F8F9FA;
@@ -41,10 +41,14 @@
             }
         }
     }
-    .btn-delete {
+    .btn-task {
         position: absolute;
         top: 8px;
         right: 8px;
+
+    &.done{
+        top: 50px;
+    }
     }
 }
 // @media all and (max-width: 320px){

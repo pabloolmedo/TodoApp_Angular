@@ -1,3 +1,4 @@
+import { environment } from './../../../../../environments/environment.prod';
 import { LocalStorageService } from './../../../../shared/service/local-storage.service';
 import { Task } from '../../../../shared/interfaces/task';
 import { Component, OnInit, Input } from '@angular/core';
@@ -10,12 +11,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskListComponent implements OnInit {
   @Input() taskList: Array<Task> = [];
   constructor(private localStorageService: LocalStorageService) { }
-
+ngOnChanges(){
+  
+}
   ngOnInit() {
+
   }
 
   deleteTask(index: number): void {
     this.taskList.splice(index, 1);    
     this.localStorageService.updateAll('tasks', this.taskList);  
   }
+
+  
 }

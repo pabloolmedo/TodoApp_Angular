@@ -18,7 +18,7 @@ export class AddTaskComponent implements OnInit {
   constructor(private modalService: BsModalService, private localStorageService: LocalStorageService) {
 
   }
-
+  
   ngOnInit() {
     this.buildForm();
 
@@ -28,7 +28,8 @@ export class AddTaskComponent implements OnInit {
       title: new FormControl("", [Validators.required, Validators.minLength(1)]),
       description: new FormControl("", [Validators.required]),
       date: new FormControl(null),
-      deadLine: new FormControl("", [Validators.required])
+      deadLine: new FormControl("", [Validators.required]),
+      isDone: new FormControl(false)
     });
   }
   public openAddModal(template: TemplateRef<any>): void {

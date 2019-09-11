@@ -3,4 +3,5 @@ export interface Task {
     description:string;
     date:Date;
     deadLine: Date;
+    isDone: boolean;
 }

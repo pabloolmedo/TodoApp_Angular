@@ -3,9 +3,11 @@
 <span class="count" *ngIf="!weathers?.count && !loading">No Results! Try Again</span>
 <span class="count" *ngIf="loading">Loading...!</span>
 <div class="card" *ngFor="let weatherItem of weathers?.list">
-    <h2><strong>City: </strong>{{weatherItem.name}}</h2>
-    <h3><strong>Temp: </strong>{{weatherItem.main.temp}}</h3>
-    <div *ngFor="let secondItem of weatherItem?.weather">
-        <h4><strong>Forecast: </strong>{{secondItem.description}}</h4>
+    <h2>{{weatherItem.name}}</h2>
+    <h3><strong>Temp: </strong>{{weatherItem.main.temp | centigrade}}</h3>
+    <h3><strong>Humidity: </strong>{{weatherItem.main.humidity | percentage}}</h3>
+    <h3><strong>Wind: </strong>{{weatherItem.wind.speed | wind}}</h3>
+    <div *ngFor="let weatherItemTwo of weatherItem?.weather">
+        <h4><strong>Forecast: </strong>{{weatherItemTwo.description}}</h4>
     </div>
 </div>

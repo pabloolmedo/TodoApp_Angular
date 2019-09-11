@@ -12,7 +12,8 @@ export class MyTasksComponent implements OnInit {
  public myTasks: Array<Task> = [];
   constructor(private localStorageService: LocalStorageService) { }
 
-
+ 
+ 
   ngOnInit() {
      this.myTasks = this.localStorageService.retrieve('tasks');
   }

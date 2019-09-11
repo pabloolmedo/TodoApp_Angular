@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login():void{
-    debugger
+    
     console.log(event);
     let fullUser = btoa(this.user.concat(this.password));
     this.localStorageService.create('user', fullUser);

@@ -14,6 +14,9 @@ import { TaskListComponent } from '../pages/my-tasks/components/task-list/task-l
 import { HeaderComponent } from './components/header/header.component';
 import { WeatherServiceService } from './service/weather-service.service';
 import { LocalStorageService } from './service/local-storage.service';
+import { CentigradePipe } from './pipes/centigrade.pipe';
+import { WindPipe } from './pipes/wind.pipe';
+import { PercentagePipe } from './pipes/percentage.pipe';
 
 
 
@@ -23,7 +26,10 @@ import { LocalStorageService } from './service/local-storage.service';
     TaskComponent,
     AddTaskComponent,
     TaskListComponent,
-    HeaderComponent
+    HeaderComponent,
+    CentigradePipe,
+    WindPipe,
+    PercentagePipe
   ],
   imports: [
     CommonModule,
@@ -42,7 +48,10 @@ import { LocalStorageService } from './service/local-storage.service';
     HeaderComponent,
     TaskComponent,
     AddTaskComponent,
-    TaskListComponent
+    TaskListComponent,
+    CentigradePipe,
+    WindPipe,
+    PercentagePipe
   ]
 })
 export class SharedModule { }

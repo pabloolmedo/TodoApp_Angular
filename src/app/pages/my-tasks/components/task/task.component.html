@@ -6,4 +6,8 @@
     <span class="task-date success">Inicia: {{ task.date | date:'shortDate' | date: 'dd/MM/yyyy' }}</span>
     <span class="task-date danger">Vence: {{ task.deadLine | date:'shortDate' | date:'dd/MM/yyyy' }}</span>
 </div>
-<button class="btn btn-danger btn-delete" (click)="deleteTask()">Delete</button>
+<button class="btn btn-danger btn-task" (click)="deleteTask()">Delete</button>
+<button class="btn  btn-task done" (click)="task.isDone = !task.isDone" [ngClass]="{'btn-success': task.isDone, 'btn-outline-success': !task.isDone}">
+    <span *ngIf="!task.done">Done</span>
+    <span *ngIf="task.done">Undo</span>
+</button>
