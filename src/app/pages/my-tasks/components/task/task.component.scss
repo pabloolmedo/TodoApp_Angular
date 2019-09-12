@@ -1,77 +1,69 @@
 :host {
-    width: 80%;
+  width: 80%;
+  display: block;
+  border: solid 1px rgb(2, 2, 2);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  position: relative;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+    // background-color: rgb(8, 138, 224);
+    transition: 1000ms;
+  }
+
+  .task-title {
+    font-size: 22px;
+    border: none;
+    &:not(:disabled) {
+      border-bottom: solid gray 1px;
+    }
+
+    &:disabled {
+      background-color: white;
+    }
+  }
+  .task-description {
     display: block;
-    border: solid 1px rgb(2, 2, 2);
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    position: relative;
-    &:hover{
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
-        // background-color: rgb(8, 138, 224);
-        transition: 1000ms;
-       
+    font-size: 16px;
+    color: rgb(49, 49, 49);
+    border: none;
+    &:not(:disabled) {
+      border-bottom: solid gray 1px;
     }
-   
-   
 
-    .task-title {
-        font-size: 22px;
+    &:disabled {
+      background-color: white;
     }
-    .task-description {
-        font-size: 16px;
-        color: rgb(49, 49, 49);
-    }
-    .task-footer {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: solid 1px rgb(7, 7, 7)   ;
+  }
+  .task-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 1px rgb(7, 7, 7);
 
-        .task-date {
-            color: #F8F9FA;
+    .task-date {
+      color: #f8f9fa;
 
-            &.danger {
-                color:#eb7070;
-            }
-            &.success{
-                color:#64e291;
-            }
+      &.danger {
+        color: #eb7070;
+        border: none;
+        text-align: end;
+        
+
+        &:not(:disabled) {
+          border-bottom: solid gray 1px;
         }
-    }
-    .btn-task {
-        position: absolute;
-        top: 8px;
-        right: 8px;
 
-    &.done{
-        top: 50px;
+        &:disabled {
+          background-color: white;
+        }
+      }
+      &.success {
+        color: #64e291;
+      }
     }
-    }
+  }
 }
-// @media all and (max-width: 320px){
-//     .task-header{
-//         display: flex;
-//         flex-direction: column;
-//         flex-wrap: wrap;
-        
-        
-//     }
-//     .task-title{
-//         display: block;
-//         font-size: 16px;
-        
-//     }
-//     span.task-description{
-//         display: block;
-       
-//         font-size: 14px;
-        
-//     }
-//     .task-footer {
-//         display: flex;
-//         flex-direction: column;      
-//     }
-// }

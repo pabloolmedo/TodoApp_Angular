@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
   @Input() taskList: Array<Task> = [];
+
   constructor(private localStorageService: LocalStorageService) { }
 ngOnChanges(){
   
@@ -23,5 +24,7 @@ ngOnChanges(){
     this.localStorageService.updateAll('tasks', this.taskList);  
   }
 
-  
+  updateList(){
+    this.localStorageService.updateAll('tasks',this.taskList);
+  }
 }

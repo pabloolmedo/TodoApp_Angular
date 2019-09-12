@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherComponent } from './pages/component-home/components/weather/weather.component';
 import { LoginComponent } from './pages/login/login.component'
 import { FormsModule } from '@angular/forms';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     MyTasksComponent,
     WeatherComponent,
     LoginComponent,
+    DetailsComponent,
     
   ],
   imports: [
